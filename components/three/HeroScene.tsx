@@ -13,7 +13,7 @@ function CameraRig() {
     const ty = pointer.y * 0.25 + Math.sin(t * 0.4) * 0.04;
     camera.position.x = THREE.MathUtils.damp(camera.position.x, tx, 2, 0.016);
     camera.position.y = THREE.MathUtils.damp(camera.position.y, ty, 2, 0.016);
-    camera.lookAt(0, 0, 0);
+    camera.lookAt(0, 0.1, 0);
   });
   return null;
 }
@@ -35,7 +35,7 @@ export default function HeroScene() {
       shadows
       dpr={[1, 1.6]}
       gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
-      camera={{ position: [0, 0.3, 4.8], fov: 34 }}
+      camera={{ position: [0, 0.0, 5.6], fov: 38 }}
       className="!absolute inset-0"
     >
       <color attach="background" args={["#fafaf8"]} />
