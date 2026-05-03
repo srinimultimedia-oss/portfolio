@@ -21,13 +21,13 @@ export default function Nav() {
       initial={{ y: -32, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.7, 0, 0.2, 1] }}
-      className={`fixed inset-x-0 top-0 z-50 transition-colors ${
-        scrolled ? "backdrop-blur-md bg-ink/60 border-b border-white/5" : ""
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled ? "backdrop-blur-md bg-white/80 border-b border-black/5 shadow-sm" : ""
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link href="#top" className="group flex items-center gap-3">
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-accent-violet to-accent-cyan text-[13px] font-semibold tracking-wider text-ink shadow-[0_0_30px_rgba(124,92,255,0.45)]">
+          <span className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-accent-violet to-accent-cyan text-[13px] font-semibold tracking-wider text-white shadow-[0_0_24px_rgba(107,78,255,0.35)]">
             {profile.initials}
           </span>
           <span className="hidden font-display text-lg leading-none text-chrome-100 sm:block">
@@ -62,14 +62,14 @@ export default function Nav() {
 
           <a
             href={`mailto:${profile.email}`}
-            className="hidden md:inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-chrome-100 transition-colors hover:bg-white/10"
+            className="hidden md:inline-flex items-center rounded-full border border-black/10 bg-black/4 px-4 py-2 text-sm text-chrome-100 transition-colors hover:bg-black/8"
           >
             Get in touch ↗
           </a>
 
           <button
             aria-label="Open menu"
-            className="md:hidden grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5"
+            className="md:hidden grid h-10 w-10 place-items-center rounded-full border border-black/10 bg-black/4"
             onClick={() => setOpen((o) => !o)}
           >
             <span className="block h-px w-4 bg-chrome-100" />
@@ -78,7 +78,7 @@ export default function Nav() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-white/5 bg-ink/90 backdrop-blur">
+        <div className="md:hidden border-t border-black/5 bg-white/95 backdrop-blur">
           <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-5">
             {navLinks.map((l) => (
               <a

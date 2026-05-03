@@ -8,10 +8,10 @@ import { projects } from "@/lib/data";
 const ProjectArt = dynamic(() => import("./three/ProjectArt"), { ssr: false });
 
 const accentBorder: Record<string, string> = {
-  violet: "hover:border-accent-violet/60",
-  cyan: "hover:border-accent-cyan/60",
-  peach: "hover:border-accent-peach/60",
-  lime: "hover:border-accent-lime/60",
+  violet: "hover:border-accent-violet/40 hover:shadow-[0_8px_32px_rgba(107,78,255,0.12)]",
+  cyan: "hover:border-accent-cyan/40 hover:shadow-[0_8px_32px_rgba(0,196,217,0.12)]",
+  peach: "hover:border-accent-peach/40 hover:shadow-[0_8px_32px_rgba(255,122,69,0.12)]",
+  lime: "hover:border-accent-lime/40 hover:shadow-[0_8px_32px_rgba(132,204,22,0.12)]",
 };
 
 export default function Projects() {
@@ -23,7 +23,7 @@ export default function Projects() {
         description="A small, curated set. Detailed case studies on request — drop me a note."
       />
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-5 md:grid-cols-2">
         {projects.map((p, i) => (
           <motion.a
             key={p.slug}
@@ -33,20 +33,19 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10% 0px" }}
             transition={{ duration: 0.7, delay: (i % 2) * 0.06, ease: [0.7, 0, 0.2, 1] }}
-            className={`group relative overflow-hidden rounded-3xl border border-white/8 bg-white/[0.02] p-6 transition-colors ${
+            className={`group relative overflow-hidden rounded-3xl border border-black/8 bg-white p-6 shadow-[0_2px_16px_rgba(0,0,0,0.06)] transition-all duration-300 ${
               accentBorder[p.accent]
             } md:p-8`}
           >
-            <div className="relative mb-6 aspect-[16/10] overflow-hidden rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01]">
+            <div className="relative mb-6 aspect-[16/10] overflow-hidden rounded-2xl bg-ink-900/60">
               <ProjectArt accent={p.accent} seed={i * 1.7} />
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.05),transparent_60%)]" />
             </div>
 
             <div className="flex items-baseline justify-between gap-4">
               <h3 className="font-display text-2xl text-chrome-100 md:text-3xl">
                 {p.title}
               </h3>
-              <span className="font-mono text-xs text-chrome-400">{p.year}</span>
+              <span className="font-mono text-xs text-chrome-400 shrink-0">{p.year}</span>
             </div>
             <p className="mt-3 text-pretty text-sm text-chrome-300 md:text-base">
               {p.summary}

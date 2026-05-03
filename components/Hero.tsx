@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { profile } from "@/lib/data";
 
-// Lazy-load the WebGL scene; render a static fallback for SSR / low-power devices.
 const HeroScene = dynamic(() => import("./three/HeroScene"), {
   ssr: false,
   loading: () => <HeroFallback />,
@@ -14,8 +13,8 @@ function HeroFallback() {
   return (
     <div className="absolute inset-0 grid place-items-center">
       <div className="relative h-64 w-64">
-        <div className="absolute inset-0 animate-spin-slow rounded-full bg-gradient-to-tr from-accent-violet via-accent-cyan to-accent-peach opacity-40 blur-2xl" />
-        <div className="absolute inset-6 rounded-full border border-white/10 backdrop-blur" />
+        <div className="absolute inset-0 animate-spin-slow rounded-full bg-gradient-to-tr from-accent-violet via-accent-cyan to-accent-peach opacity-20 blur-2xl" />
+        <div className="absolute inset-6 rounded-full border border-black/10 backdrop-blur" />
       </div>
     </div>
   );
@@ -36,10 +35,10 @@ export default function Hero() {
       id="top"
       className="relative isolate min-h-[100svh] overflow-hidden bg-mesh"
     >
-      {/* Subtle grid */}
+      {/* Subtle dot grid */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.07] [background-image:linear-gradient(to_right,rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]"
+        className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:linear-gradient(to_right,rgba(0,0,0,0.5)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.5)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]"
       />
 
       <HeroScene />
@@ -93,14 +92,14 @@ export default function Hero() {
         >
           <a
             href="#work"
-            className="group inline-flex items-center gap-3 rounded-full bg-chrome-100 px-6 py-3 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
+            className="group inline-flex items-center gap-3 rounded-full bg-chrome-100 px-6 py-3 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5 shadow-[0_4px_20px_rgba(28,28,42,0.2)]"
           >
             View selected work
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm text-chrome-100 backdrop-blur transition-colors hover:bg-white/10"
+            className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-black/5 px-6 py-3 text-sm text-chrome-100 transition-colors hover:bg-black/10"
           >
             Start a project
           </a>
