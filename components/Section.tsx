@@ -21,7 +21,7 @@ export function SectionHeader({
       className="mb-14 max-w-3xl"
     >
       <span className="chip mb-5">
-        <span className="h-1 w-1 rounded-full bg-accent-cyan" />
+        <span className="h-1 w-1 rounded-full bg-accent-violet" />
         {eyebrow}
       </span>
       <h2 className="font-display text-balance text-[clamp(2rem,4.5vw,3.6rem)] leading-[1.02] tracking-[-0.02em] text-chrome-100">

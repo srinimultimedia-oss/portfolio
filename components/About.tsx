@@ -36,7 +36,7 @@ export default function About() {
             {about.highlights.map((h) => (
               <div
                 key={h.label}
-                className="group relative overflow-hidden rounded-2xl border border-white/8 bg-white/[0.02] p-5 transition-colors hover:bg-white/[0.04]"
+                className="group relative overflow-hidden rounded-2xl border border-black/8 bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-shadow hover:shadow-[0_4px_24px_rgba(0,0,0,0.1)]"
               >
                 <div className="font-display text-4xl text-chrome-100 md:text-5xl">
                   {h.value}
@@ -44,7 +44,7 @@ export default function About() {
                 <div className="mt-2 text-xs uppercase tracking-[0.18em] text-chrome-400">
                   {h.label}
                 </div>
-                <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-accent-violet/20 blur-2xl transition-opacity group-hover:opacity-80" />
+                <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-accent-violet/10 blur-2xl transition-opacity group-hover:opacity-80" />
               </div>
             ))}
           </div>

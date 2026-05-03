@@ -5,25 +5,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Page background tones (light)
         ink: {
-          DEFAULT: "#06060a",
-          900: "#0a0a12",
-          800: "#11111c",
-          700: "#1a1a2a",
-          600: "#23233a",
+          DEFAULT: "#fafaf8",
+          900: "#f3f2ee",
+          800: "#e8e6e0",
+          700: "#d4d2cb",
+          600: "#b2afa6",
         },
+        // Accent palette
         accent: {
-          violet: "#7c5cff",
-          cyan: "#22e3ff",
-          peach: "#ff9d6e",
-          lime: "#c6ff5e",
+          violet: "#6b4eff",
+          cyan: "#00c4d9",
+          peach: "#ff7a45",
+          lime: "#84cc16",
         },
+        // Text scale (dark → lighter)
         chrome: {
-          100: "#f5f5fa",
-          200: "#d8d8e6",
-          300: "#a8a8bd",
-          400: "#6e6e85",
-          500: "#3e3e54",
+          100: "#1c1c2a",
+          200: "#363652",
+          300: "#5c5c78",
+          400: "#8a8aa2",
+          500: "#b5b5c8",
         },
       },
       fontFamily: {
@@ -33,8 +36,8 @@ const config: Config = {
       },
       animation: {
         "spin-slow": "spin 18s linear infinite",
-        "float": "float 6s ease-in-out infinite",
-        "shimmer": "shimmer 2.4s linear infinite",
+        float: "float 6s ease-in-out infinite",
+        shimmer: "shimmer 2.4s linear infinite",
       },
       keyframes: {
         float: {
@@ -45,10 +48,6 @@ const config: Config = {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
         },
-      },
-      backgroundImage: {
-        "grid-fade":
-          "linear-gradient(180deg, transparent, rgba(124,92,255,0.06) 40%, transparent), radial-gradient(circle at 30% 20%, rgba(34,227,255,0.10), transparent 40%), radial-gradient(circle at 80% 70%, rgba(124,92,255,0.10), transparent 45%)",
       },
     },
   },

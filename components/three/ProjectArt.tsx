@@ -6,10 +6,10 @@ import { useMemo, useRef } from "react";
 import * as THREE from "three";
 
 const palette: Record<string, string> = {
-  violet: "#7c5cff",
-  cyan: "#22e3ff",
-  peach: "#ff9d6e",
-  lime: "#c6ff5e",
+  violet: "#6b4eff",
+  cyan: "#00c4d9",
+  peach: "#ff7a45",
+  lime: "#84cc16",
 };
 
 function Blob({ color, seed }: { color: string; seed: number }) {
@@ -46,9 +46,10 @@ export default function ProjectArt({ accent, seed }: { accent: keyof typeof pale
       gl={{ antialias: true, alpha: true }}
       className="!absolute inset-0"
     >
-      <ambientLight intensity={0.6} />
-      <directionalLight position={[3, 4, 5]} intensity={1.2} />
-      <pointLight position={[-3, -2, 2]} intensity={1} color={color} />
+      <color attach="background" args={["#f3f2ee"]} />
+      <ambientLight intensity={1.0} color="#fff8f2" />
+      <directionalLight position={[3, 4, 5]} intensity={2.0} color="#fff0e0" />
+      <pointLight position={[-3, -2, 2]} intensity={0.8} color={color} />
       <Blob color={color} seed={seed} />
     </Canvas>
   );

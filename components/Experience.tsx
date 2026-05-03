@@ -6,17 +6,17 @@ import { experience } from "@/lib/data";
 
 export default function Experience() {
   return (
-    <Section id="experience">
+    <Section id="experience" className="bg-ink-900/50">
       <SectionHeader
         eyebrow="Trajectory"
         title="Where I've been."
         description="The short version. Happy to walk through any of it over a call."
       />
 
-      <ol className="relative grid gap-6 md:grid-cols-1">
+      <ol className="relative grid gap-5 md:grid-cols-1">
         <span
           aria-hidden
-          className="absolute left-3 top-2 hidden h-[calc(100%-1rem)] w-px bg-gradient-to-b from-accent-violet/60 via-white/10 to-transparent md:left-4 md:block"
+          className="absolute left-3 top-2 hidden h-[calc(100%-1rem)] w-px bg-gradient-to-b from-accent-violet/50 via-black/8 to-transparent md:left-4 md:block"
         />
 
         {experience.map((e, i) => (
@@ -26,11 +26,11 @@ export default function Experience() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-10% 0px" }}
             transition={{ duration: 0.65, delay: i * 0.05, ease: [0.7, 0, 0.2, 1] }}
-            className="relative grid grid-cols-1 gap-6 rounded-2xl border border-white/8 bg-white/[0.02] p-6 md:grid-cols-12 md:items-baseline md:pl-14"
+            className="relative grid grid-cols-1 gap-6 rounded-2xl border border-black/8 bg-white p-6 shadow-[0_2px_12px_rgba(0,0,0,0.05)] md:grid-cols-12 md:items-baseline md:pl-14"
           >
             <span
               aria-hidden
-              className="absolute left-2 top-7 hidden h-3 w-3 rounded-full bg-accent-violet shadow-[0_0_22px_rgba(124,92,255,0.7)] md:left-2.5 md:block"
+              className="absolute left-2 top-7 hidden h-3 w-3 rounded-full bg-accent-violet shadow-[0_0_18px_rgba(107,78,255,0.5)] md:left-2.5 md:block"
             />
             <div className="md:col-span-3">
               <div className="font-mono text-xs uppercase tracking-[0.2em] text-chrome-400">
